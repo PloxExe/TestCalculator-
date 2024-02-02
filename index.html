@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        span {
+            font-size: 200%;
+        }
+
+        input {
+            margin: 5px 5px 5px 0;
+            padding: 0;
+            width: 100px;
+            height: 40px;
+            font-size: 200%;
+            text-align: right;
+        }
+
+        button {
+            margin: 5px 5px 5px 0;
+            padding: 0;
+            width: 105px;
+            height: 50px;
+            font-size: 200%;
+        }
+
+        .clear {
+            width: 125px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="operand1">
+        <input type="text" id="operand2">
+        <span>=</span>
+        <input type="text" id="result" disabled><br>
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="subtract()">-</button>
+        <button type="button" onclick="clearInput()" class="clear">C</button><br>
+        <button type="button" onclick="multiply()">x</button>
+        <button type="button" onclick="divide()">/</button><br>
+    </form>
+
+    <script>
+        // Add the values from input fields
+        function add() {
+            let operand1 = parseInt(document.querySelector("#operand1").value) || 0;
+            let operand2 = parseInt(document.querySelector("#operand2").value) || 0;
+            let result = operand1 + operand2;
+            document.querySelector("#result").value = result;
+        }
+
+        // Subtract the values from input fields
+        function subtract() {
+            let operand1 = parseInt(document.querySelector("#operand1").value) || 0;
+            let operand2 = parseInt(document.querySelector("#operand2").value) || 0;
+            let result = operand1 - operand2;
+            document.querySelector("#result").value = result;
+        }
+
+        // Multiply the values from input fields
+        function multiply() {
+            let operand1 = parseInt(document.querySelector("#operand1").value) || 0;
+            let operand2 = parseInt(document.querySelector("#operand2").value) || 0;
+            let result = operand1 * operand2;
+            document.querySelector("#result").value = result;
+        }
+
+        // Divide the values from input fields
+        function divide() {
+            let operand1 = parseInt(document.querySelector("#operand1").value) || 0;
+            let operand2 = parseInt(document.querySelector("#operand2").value) || 0;
+            let result = operand1 / operand2;
+            document.querySelector("#result").value = result;
+        }
+
+        // Clear input fields
+        function clearInput() {
+            document.querySelector("#operand1").value = "";
+            document.querySelector("#operand2").value = "";
+            document.querySelector("#result").value = "";
+        }
+    </script>
+</body>
+
+</html>
